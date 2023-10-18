@@ -13,3 +13,7 @@ You can create a calendar ics file and add it to a calendar programs as outlook,
 - Run the file to add a event meeting to your calendar
 
 ![Calendar!](/public/assets/images/calendar.png "Calendar")
+
+Your team look like:
+
+![team!](/public/assets/images/team.png "team")
