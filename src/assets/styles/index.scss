@@ -1,0 +1,32 @@
+table {
+  width: 100%;
+
+  tr {
+    td,
+    th {
+      text-align: left;
+    }
+
+    td {
+      width: 100%;
+    }
+  }
+}
+
+input,
+textarea {
+  width: 100%;
+  max-width: 800px;
+
+  &[type="submit"] {
+    width: auto;
+  }
+}
+
+textarea {
+  height: 80px;
+}
+
+.red {
+  color: red;
+}
