@@ -4,7 +4,7 @@
   "description": "A simple page that you can create a calendar ics file and add it to a calendar programs as outlook, email...",
   "main": "index.html",
   "scripts": {
-    "start": "concurrently \"vite build --mode development\" \"vite preview --mode development\"",
+    "start": "concurrently \"vite build --mode development --watch\" \"vite preview --mode development\"",
     "build": "vite build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -25,6 +25,7 @@
   "devDependencies": {
     "@types/node": "^20.8.6",
     "concurrently": "^8.2.1",
+    "sass": "^1.69.4",
     "vite": "^4.4.11"
   }
 }
