@@ -24,8 +24,14 @@
   "homepage": "https://github.com/lehung1109/calendar-reminder#readme",
   "devDependencies": {
     "@types/node": "^20.8.6",
+    "@types/react-dom": "^18.2.13",
     "concurrently": "^8.2.1",
+    "ics": "^3.5.0",
     "sass": "^1.69.4",
     "vite": "^4.4.11"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   }
 }
