@@ -6,7 +6,7 @@ const App = () => {
   const date = new Date();
   const minDate = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}T${date.getHours()}:${date.getMinutes()}` // YYYY-M-D-H-m
 
-  const handleClick = (event: SyntheticEvent) => {
+  const handleSubmit = (event: SyntheticEvent) => {
     event.preventDefault();
     const data = getEventData();
 
@@ -17,9 +17,25 @@ const App = () => {
 
     console.log(data);
 
+    const form = document.querySelector('form');
+
+    if(!form) {
+      console.log('missing form');
+      return;
+    }
+
+    if(form.classList.contains('pending')) {
+      alert('Processing. Please wait!');
+      return;
+    }
+
+    form.classList.add('pending');
+
     handleDownload(data).then(() => {
       console.log('create calendar reminder successful.');
-    }).catch(console.log);
+    }).catch(console.log).finally(() => {
+      form.classList.remove('pending');
+    });
   };
 
   const getEventData = (): EventAttributes => {
@@ -56,7 +72,7 @@ const App = () => {
         <p>Simple validate so please make sure your data input make sense</p>
       </div>
 
-      <form action="">
+      <form action="" onSubmit={handleSubmit}>
         <table>
           <tr>
             <th>Title</th>
@@ -87,7 +103,7 @@ const App = () => {
         </table>
 
         <p>
-          <input type="submit" onClick={handleClick} name="submit" value={"Create calendar reminder"} />
+          <input type="submit" name="submit" value={"Create calendar reminder"} />
         </p>
       </form>
     </>

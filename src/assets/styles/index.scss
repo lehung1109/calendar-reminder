@@ -30,3 +30,19 @@ textarea {
 .red {
   color: red;
 }
+
+form {
+  &.pending {
+    cursor: wait;
+    opacity: 0.5;
+
+    input,
+    textarea {
+      cursor: wait;
+
+      &[type="submit"] {
+        pointer-events: none;
+      }
+    }
+  }
+}
